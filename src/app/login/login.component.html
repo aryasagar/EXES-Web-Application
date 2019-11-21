@@ -1,0 +1,21 @@
+<h1 class="header">Login</h1>
+<div class="container">
+  <div class="row center">
+    <div class="col-12">
+      <form [formGroup]="loginForm">
+        <div class="form-group text">
+          <label>Email address</label>
+          <input type="email" formControlName="email" class="form-control">
+        </div>
+        <div class="form-group text">
+          <label>Password</label>
+          <input type="password" class="form-control" formControlName="password">
+          <label class="error">{{errorMessage}}</label>
+        </div>
+        <button type="submit" (click)="tryLogin(loginForm.value)" class="btn btn-default btn-block">Login</button>
+      </form>
+      <p>or</p>
+      <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Login with Google</button>
+      <p>No account yet? <a routerLink="/register">Create an account</a></p>
+    </div>
+  </div>
